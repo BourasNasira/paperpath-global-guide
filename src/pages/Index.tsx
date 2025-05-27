@@ -30,7 +30,13 @@ const Index = () => {
       multiLanguage: "Multilingue",
       multiLanguageDesc: "Interface dans votre langue maternelle",
       getStarted: "Commencer",
-      howItWorks: "Comment ça marche"
+      howItWorks: "Comment ça marche",
+      heroTitle: "Naviguez dans la bureaucratie avec confiance",
+      heroDesc: "PaperPath simplifie les processus administratifs complexes pour les étrangers, immigrants et personnes dans les zones reculées. Obtenez des instructions étape par étape dans votre langue.",
+      startProcess: "Commencer le processus",
+      findOffices: "Trouver des bureaux",
+      whyChoose: "Pourquoi choisir PaperPath?",
+      whyChooseDesc: "Cliquez sur chaque fonctionnalité pour voir comment PaperPath rend la bureaucratie accessible et simple."
     },
     en: {
       welcome: "Welcome to PaperPath",
@@ -48,7 +54,13 @@ const Index = () => {
       multiLanguage: "Multilingual",
       multiLanguageDesc: "Interface in your native language",
       getStarted: "Get Started",
-      howItWorks: "How it works"
+      howItWorks: "How it works",
+      heroTitle: "Navigate bureaucracy with confidence",
+      heroDesc: "PaperPath simplifies complex administrative processes for foreigners, immigrants and people in remote areas. Get step-by-step guidance in your language.",
+      startProcess: "Start Your Process",
+      findOffices: "Find Offices",
+      whyChoose: "Why choose PaperPath?",
+      whyChooseDesc: "Click on each feature to see how PaperPath makes bureaucracy accessible and simple."
     },
     ar: {
       welcome: "مرحباً بك في PaperPath",
@@ -66,7 +78,13 @@ const Index = () => {
       multiLanguage: "متعدد اللغات",
       multiLanguageDesc: "واجهة بلغتك الأم",
       getStarted: "ابدأ",
-      howItWorks: "كيف يعمل"
+      howItWorks: "كيف يعمل",
+      heroTitle: "تنقل في البيروقراطية بثقة",
+      heroDesc: "يبسط PaperPath العمليات الإدارية المعقدة للأجانب والمهاجرين والأشخاص في المناطق النائية. احصل على إرشادات خطوة بخطوة بلغتك.",
+      startProcess: "ابدأ العملية",
+      findOffices: "ابحث عن المكاتب",
+      whyChoose: "لماذا تختار PaperPath؟",
+      whyChooseDesc: "انقر على كل ميزة لترى كيف يجعل PaperPath البيروقراطية في متناول الجميع وبسيطة."
     }
   };
 
@@ -77,31 +95,29 @@ const Index = () => {
       icon: FileText,
       title: t.documentGuide,
       description: t.documentGuideDesc,
-      color: "bg-blue-500"
-    },
-    {
-      icon: MapPin,
-      title: t.serviceLocator,
-      description: t.serviceLocatorDesc,
-      color: "bg-teal-500"
-    },
-    {
-      icon: Headphones,
-      title: t.audioSupport,
-      description: t.audioSupportDesc,
-      color: "bg-green-500"
-    },
-    {
-      icon: Download,
-      title: t.offlineMode,
-      description: t.offlineModeDesc,
-      color: "bg-purple-500"
+      color: "bg-blue-500",
+      number: "01"
     },
     {
       icon: Languages,
       title: t.multiLanguage,
       description: t.multiLanguageDesc,
-      color: "bg-orange-500"
+      color: "bg-green-500",
+      number: "02"
+    },
+    {
+      icon: Headphones,
+      title: t.audioSupport,
+      description: t.audioSupportDesc,
+      color: "bg-purple-500",
+      number: "03"
+    },
+    {
+      icon: MapPin,
+      title: t.serviceLocator,
+      description: t.serviceLocatorDesc,
+      color: "bg-orange-500",
+      number: "04"
     }
   ];
 
@@ -115,112 +131,126 @@ const Index = () => {
         return <AudioSupport language={selectedLanguage} />;
       default:
         return (
-          <div className="space-y-8">
+          <div className="space-y-16">
             {/* Hero Section */}
-            <div className="text-center space-y-6 py-12 px-4">
-              <div className="flex justify-center mb-6">
-                <img 
-                  src="/lovable-uploads/a6977eb7-a5ef-4f40-966e-b72f60e7daf5.png" 
-                  alt="PaperPath Logo" 
-                  className="w-24 h-24 object-contain"
-                />
-              </div>
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
-                {t.welcome}
-              </h1>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                {t.subtitle}
-              </p>
-              <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                {t.description}
-              </p>
-              <Button 
-                onClick={() => setCurrentView('documents')}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg rounded-full transition-all duration-300 transform hover:scale-105"
-              >
-                {t.getStarted}
-              </Button>
-            </div>
-
-            {/* User Images */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 px-4 max-w-4xl mx-auto">
-              <img 
-                src="/lovable-uploads/88713b5b-ce37-425f-8244-3ec9fcc4d7a0.png" 
-                alt="User using PaperPath" 
-                className="w-full h-48 object-cover rounded-lg shadow-md"
-              />
-              <img 
-                src="/lovable-uploads/1728a585-77e5-48a3-9b68-c7d4213ec07d.png" 
-                alt="User with PaperPath" 
-                className="w-full h-48 object-cover rounded-lg shadow-md"
-              />
-              <img 
-                src="/lovable-uploads/6fef9f5f-9db2-4027-bb82-86d2e4411c61.png" 
-                alt="Group using PaperPath" 
-                className="w-full h-48 object-cover rounded-lg shadow-md"
-              />
-              <img 
-                src="/lovable-uploads/29334d10-7108-4382-82ae-66f7825a5a0c.png" 
-                alt="Friends with PaperPath" 
-                className="w-full h-48 object-cover rounded-lg shadow-md"
-              />
-              <img 
-                src="/lovable-uploads/a6cc40ff-6784-4ea1-a95c-2e086cc7cb05.png" 
-                alt="User in waiting area" 
-                className="w-full h-48 object-cover rounded-lg shadow-md col-span-2 md:col-span-1"
-              />
-            </div>
-
-            {/* Features Section */}
-            <div className="px-4 py-12">
-              <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-                {t.features}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                {features.map((feature, index) => (
-                  <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
-                    <CardHeader className="text-center">
-                      <div className={`w-16 h-16 ${feature.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                        <feature.icon className="w-8 h-8 text-white" />
-                      </div>
-                      <CardTitle className="text-xl text-gray-800">{feature.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-center text-gray-600">
-                        {feature.description}
-                      </CardDescription>
-                    </CardContent>
-                  </Card>
-                ))}
+            <div className="bg-gradient-to-br from-blue-50 via-white to-teal-50 py-20 px-4">
+              <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8">
+                  <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                    {t.heroTitle}
+                  </h1>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    {t.heroDesc}
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button 
+                      onClick={() => setCurrentView('documents')}
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg rounded-lg font-medium"
+                      size="lg"
+                    >
+                      {t.startProcess}
+                    </Button>
+                    <Button 
+                      onClick={() => setCurrentView('services')}
+                      variant="outline"
+                      className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg rounded-lg font-medium"
+                      size="lg"
+                    >
+                      {t.findOffices}
+                    </Button>
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="bg-white rounded-2xl shadow-2xl p-4 transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                    <img 
+                      src="/lovable-uploads/88713b5b-ce37-425f-8244-3ec9fcc4d7a0.png" 
+                      alt="PaperPath users" 
+                      className="w-full h-96 object-cover rounded-xl"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* How it Works */}
-            <div className="bg-gradient-to-r from-blue-50 to-teal-50 py-12 px-4">
-              <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-                {t.howItWorks}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                    1
-                  </div>
-                  <h3 className="font-semibold mb-2">Sélectionnez votre démarche</h3>
-                  <p className="text-gray-600">Choisissez le type de document ou démarche administrative</p>
+            {/* Why Choose PaperPath Section */}
+            <div className="py-16 px-4 bg-white">
+              <div className="max-w-6xl mx-auto text-center space-y-12">
+                <div className="space-y-4">
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                    {t.whyChoose}
+                  </h2>
+                  <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                    {t.whyChooseDesc}
+                  </p>
                 </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-teal-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                    2
-                  </div>
-                  <h3 className="font-semibold mb-2">Suivez le guide</h3>
-                  <p className="text-gray-600">Instructions détaillées étape par étape dans votre langue</p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {features.map((feature, index) => (
+                    <Card 
+                      key={index} 
+                      className="group hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-2 border-0 shadow-lg"
+                      onClick={() => {
+                        if (feature.title === t.documentGuide) setCurrentView('documents');
+                        if (feature.title === t.serviceLocator) setCurrentView('services');
+                        if (feature.title === t.audioSupport) setCurrentView('audio');
+                      }}
+                    >
+                      <CardHeader className="text-center space-y-4">
+                        <div className="relative">
+                          <div className={`w-16 h-16 ${feature.color} rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300`}>
+                            <feature.icon className="w-8 h-8 text-white" />
+                          </div>
+                          <div className="absolute -top-2 -right-2 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                            {feature.number}
+                          </div>
+                        </div>
+                        <CardTitle className="text-xl text-gray-900 group-hover:text-blue-600 transition-colors">
+                          {feature.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="text-center pb-6">
+                        <CardDescription className="text-gray-600 leading-relaxed">
+                          {feature.description}
+                        </CardDescription>
+                        <Button 
+                          variant="ghost" 
+                          className="mt-4 text-blue-600 hover:text-blue-700 hover:bg-blue-50 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300"
+                        >
+                          Cliquer pour essayer →
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  ))}
                 </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                    3
+              </div>
+            </div>
+
+            {/* Additional Images Section */}
+            <div className="py-16 px-4 bg-gray-50">
+              <div className="max-w-6xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                  <div className="space-y-4">
+                    <img 
+                      src="/lovable-uploads/1728a585-77e5-48a3-9b68-c7d4213ec07d.png" 
+                      alt="User with PaperPath" 
+                      className="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-lg transition-shadow"
+                    />
+                    <img 
+                      src="/lovable-uploads/29334d10-7108-4382-82ae-66f7825a5a0c.png" 
+                      alt="Friends with PaperPath" 
+                      className="w-full h-32 object-cover rounded-xl shadow-md hover:shadow-lg transition-shadow"
+                    />
                   </div>
-                  <h3 className="font-semibold mb-2">Trouvez les services</h3>
-                  <p className="text-gray-600">Localisez les bureaux et services près de chez vous</p>
+                  <img 
+                    src="/lovable-uploads/6fef9f5f-9db2-4027-bb82-86d2e4411c61.png" 
+                    alt="Group using PaperPath" 
+                    className="w-full h-full object-cover rounded-xl shadow-md hover:shadow-lg transition-shadow col-span-1 md:col-span-1"
+                  />
+                  <img 
+                    src="/lovable-uploads/a6cc40ff-6784-4ea1-a95c-2e086cc7cb05.png" 
+                    alt="User in waiting area" 
+                    className="w-full h-full object-cover rounded-xl shadow-md hover:shadow-lg transition-shadow col-span-1"
+                  />
                 </div>
               </div>
             </div>

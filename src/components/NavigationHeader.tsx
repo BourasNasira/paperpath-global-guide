@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { FileText, MapPin, Headphones, Language, Settings } from 'lucide-react';
+import { FileText, MapPin, Headphones, Languages, Settings } from 'lucide-react';
 import {
   Select,
   SelectContent,
@@ -38,7 +38,7 @@ const NavigationHeader = ({ currentView, setCurrentView, selectedLanguage, setSe
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3" onClick={() => setCurrentView('home')} className="cursor-pointer">
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setCurrentView('home')}>
             <img 
               src="/lovable-uploads/a6977eb7-a5ef-4f40-966e-b72f60e7daf5.png" 
               alt="PaperPath" 
@@ -72,7 +72,7 @@ const NavigationHeader = ({ currentView, setCurrentView, selectedLanguage, setSe
           <div className="flex items-center space-x-4">
             <Select value={selectedLanguage} onValueChange={setSelectedLanguage}>
               <SelectTrigger className="w-32">
-                <Language className="w-4 h-4 mr-2" />
+                <Languages className="w-4 h-4 mr-2" />
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>

@@ -1,9 +1,8 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FileText, Users, MapPin, Headphones, Download, Language } from 'lucide-react';
+import { FileText, Users, MapPin, Headphones, Download, Languages } from 'lucide-react';
 import NavigationHeader from '@/components/NavigationHeader';
 import DocumentGuide from '@/components/DocumentGuide';
 import ServiceLocator from '@/components/ServiceLocator';
@@ -99,7 +98,7 @@ const Index = () => {
       color: "bg-purple-500"
     },
     {
-      icon: Language,
+      icon: Languages,
       title: t.multiLanguage,
       description: t.multiLanguageDesc,
       color: "bg-orange-500"

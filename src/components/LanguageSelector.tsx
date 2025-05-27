@@ -7,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Language } from 'lucide-react';
+import { Languages } from 'lucide-react';
 
 interface LanguageSelectorProps {
   selectedLanguage: string;
@@ -31,7 +31,7 @@ const LanguageSelector = ({ selectedLanguage, onLanguageChange }: LanguageSelect
   return (
     <Select value={selectedLanguage} onValueChange={onLanguageChange}>
       <SelectTrigger className="w-48">
-        <Language className="w-4 h-4 mr-2" />
+        <Languages className="w-4 h-4 mr-2" />
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
